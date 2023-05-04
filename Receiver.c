@@ -17,14 +17,16 @@ void function3(){
 
 void register_function(int input)
 {   
-   for(int i = 1; i < num_inputs; i++)
+   for(int i = input; i < num_inputs; i++)
    {
         if(i == 1)
         {
             register_callback(i,function1);
+            return;
         }
         else if(i == 2){
             register_callback(i,function2);
+            return;
         }
         else {
             register_callback(i,function3);
