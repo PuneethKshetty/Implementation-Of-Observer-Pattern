@@ -3,7 +3,8 @@
 #include "Sender.h"
 #include "Receiver.h"
 
-void register_callback(Sender* input,callback c)
+
+void register_callback(int input,callback c)
 {
     // if(input == 1)
     // {
@@ -23,8 +24,22 @@ void register_callback(Sender* input,callback c)
     // }
 
     // c();
+    int num_callbacks = 0;
+    callback array[MAX_CALLBACKS];
+    if(num_callbacks < MAX_CALLBACKS)
+    {
+        array[num_callbacks++] = c;
+        printf("Callback registered successfully\n");
+    }
+    else
+    {
+       printf("Max number of callbacks reached\n");
+    }
     printf("Registering callback function for input %d\n",input);
-    c();
+    for(int i=0;i<num_callbacks;i++)
+    {
+        array[i]();
+    }
     
 }
 
@@ -37,15 +52,15 @@ int main()
     {
     case 1:      
         printf("Calling function 1\n");
-        register_function(random);
+        register_callback(random,function1);
         break;
     case 2:
         printf("Calling function 2\n");
-        register_function(random);       
+        register_callback(random,function2);       
         break;
     case 3: 
         printf("Calling function 3\n");
-        register_function(random);
+        register_callback(random,function3);
         break;
     
     default:
