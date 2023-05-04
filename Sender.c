@@ -3,7 +3,7 @@
 #include "Sender.h"
 #include "Receiver.h"
 
-void register_callback(int input,callback c)
+void register_callback(Sender* input,callback c)
 {
     // if(input == 1)
     // {
