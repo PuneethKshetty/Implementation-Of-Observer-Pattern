@@ -15,22 +15,12 @@ void function3(){
     printf("Display Input3\n");
 }
 
-void register_function(int input)
+void register_function(callback c)
 {   
-   for(int i = input; i < num_inputs; i++)
+   for(int i=0;i<num_inputs;i++)
    {
-        if(i == 1)
-        {
-            register_callback(i,function1);
-            return;
-        }
-        else if(i == 2){
-            register_callback(i,function2);
-            return;
-        }
-        else {
-            register_callback(i,function3);
-        }
+      register_callback(i,c);
    }
+
 }
 
