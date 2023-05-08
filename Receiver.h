@@ -3,7 +3,7 @@
 #include "Sender.h"
 #define num_inputs 4
 
-typedef void (*callback)(void);
+typedef void (*callback)(int);
 
 typedef struct{
     callback c;
