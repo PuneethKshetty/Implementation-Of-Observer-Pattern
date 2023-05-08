@@ -4,6 +4,8 @@
 #define num_inputs 4
 #define MAX_CALLBACKS 6
 
+typedef void (*callback)(int);
+
 typedef struct sender{
     int input;
 }Sender;
